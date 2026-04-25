@@ -1,0 +1,31 @@
+{
+    "name": "aleoosha/tau-pid-contracts",
+    "description": "Contracts and DTOs for PID control systems",
+    "license": "MIT",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Aleoosha\\TauPid\\Contracts\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "aleoosha/support-types": "dev-main"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Aleoosha/support-types"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
