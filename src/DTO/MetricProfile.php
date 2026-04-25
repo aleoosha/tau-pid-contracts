@@ -14,6 +14,8 @@ final class MetricProfile
     public function __construct(
         public readonly string $metricName,
         public readonly FixedPoint $targetThreshold,
-        public readonly PidSettings $pidSettings
+        public readonly PidSettings $pidSettings,
+        public readonly int $settlingTimeSeconds = 5,
+        public readonly float $activationMargin = 0.9
     ) {}
 }
