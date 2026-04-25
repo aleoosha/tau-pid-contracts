@@ -3,6 +3,7 @@
 namespace Aleoosha\TauPid\Contracts;
 
 use Aleoosha\TauPid\Contracts\DTO\PidSettings;
+use Aleoosha\TauPid\Contracts\DTO\FixedPidResult;
 use Aleoosha\Support\Types\FixedPoint;
 
 /**
@@ -15,8 +16,13 @@ interface PidTunerInterface
      * Tune settings based on the current system state.
      * 
      * @param PidSettings $currentSettings Active settings
-     * @param FixedPoint $signal System feedback signal
+     * @param FixedPoint $currentError System feedback signal
+     * @param FixedPidResult $lastResult Previous calculation result
      * @return PidSettings New (adjusted) settings
      */
-    public function tune(PidSettings $currentSettings, FixedPoint $signal): PidSettings;
+    public function tune(
+        PidSettings $currentSettings, 
+        FixedPoint $currentError, 
+        ?FixedPidResult $lastResult
+    ): PidSettings;
 }
